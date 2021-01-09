@@ -12,7 +12,8 @@ for i in range(N):
     
 # write sequences to file
 with open('input.txt', w) as file:
-    file.write(line1, line2, sep="\n")
+    file.write(line1 + "\n")
+    file.write(line2 + "\n")
 line1 = line1.strip()
 line2 = line2.strip()
 len1 = len(line1)
@@ -104,6 +105,6 @@ align2 = align2[::-1]
 
 # write output to file:
 with open('output.txt', w) as file:
-    file.write(align1, align2, sep="\n")
-
+    file.write(align1 + "\n")
+    file.write(align2 + "\n")
 input('Press ENTER to exit')
