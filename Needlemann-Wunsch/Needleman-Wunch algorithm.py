@@ -1,6 +1,18 @@
-line1 = str(input())
-line2 = str(input())
+# generate long sequences
 
+from random import random
+
+N = 10000
+letters = ['A', 'C', 'G', 'T']
+line1 = ''
+line2 = ''
+for i in range(N):
+    line1 += str(letters[round(3*random())])
+    line2 += str(letters[round(3*random())])
+    
+# write sequences to file
+with open('input.txt', w) as file:
+    file.write(line1, line2, sep="\n")
 line1 = line1.strip()
 line2 = line2.strip()
 len1 = len(line1)
@@ -90,5 +102,8 @@ while i > 0:
 align1 = align1[::-1]
 align2 = align2[::-1]
 
-print(align1 + "\n" + align2)
+# write output to file:
+with open('output.txt', w) as file:
+    file.write(align1, align2, sep="\n")
+
 input('Press ENTER to exit')
